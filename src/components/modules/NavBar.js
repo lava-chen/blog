@@ -4,7 +4,7 @@ import { Link } from "@reach/router";
 import "./NavBar.css";
 
 const NavBar = () => (
-  <nav class="navBar">
+  <nav className="navBar">
     <h1 className="sixtyfour-convergence-font">LavaChen's Blog</h1>
     <ul className="noto-sans-sc-font ulFlex">
       <li>
