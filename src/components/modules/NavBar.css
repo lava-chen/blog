@@ -16,12 +16,6 @@
   font-weight: 500;
   font-style: normal;
 }
-.title-font {
-  font-family: "Playwrite DK Uloopet", cursive;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
 
 li {
   display: inline; /* 水平排列列表项 */

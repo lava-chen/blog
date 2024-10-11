@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@reach/router";
 
 import "./NavBar.css";
 
@@ -8,11 +8,13 @@ const NavBar = () => (
     <h1 className="sixtyfour-convergence-font">LavaChen's Blog</h1>
     <ul className="noto-sans-sc-font ulFlex">
       <li>
-        <Link to="/">首页</Link>
+        <Link to="/blog">首页</Link>
       </li>
-
       <li>
-        <Link to="/chuangxun">创训</Link>
+        <Link to="/blog/blogs">博客</Link>
+      </li>
+      <li>
+        <Link to="/blog/chuangxun">创训</Link>
       </li>
     </ul>
   </nav>

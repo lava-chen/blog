@@ -1,9 +1,10 @@
 import "./App.css";
-import { Router } from "react-router-dom";
+import { Router } from "@reach/router";
 import React from "react";
-import NavBar from "./components/modules/NavBar.js";
-import Home from "./components/pages/Home.js";
-import CX from "./components/pages/chuangxun.js";
+import NavBar from "./components/modules/NavBar";
+import Home from "./components/pages/Home";
+import CX from "./components/pages/chuangxun";
+import Blogs from "./components/pages/Blogs";
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
       <hr />
       <div>
         <Router>
-          <Home path="/" />
-          <CX path="/chuangxun" />
+          <Home path="/blog" />
+          <Blogs path="/blog/blogs" />
+          <CX path="/blog/chuangxun" />
         </Router>
       </div>
     </>
