@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+hr {
+  margin: 10px 40px;
+  border: none;
+  border-top: 3px solid #eeeeee;
+  border-radius: 3px;
+}
+.navBarMain {
+  margin: 0px 40px;
+}
+.h1Large {
+  margin: 0px 0px;
+  font-size: 60px;
+}
