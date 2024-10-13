@@ -1,17 +1,24 @@
 import React from "react";
 import "./BlogCard.css";
+import { Link } from "@reach/router";
 
-const BlogCard = ({ props }) => {
+const BlogCard = ({ title, summary, date, tags, likes, etitle }) => {
+  console.log(etitle);
   return (
-    <div class="blog-card">
-      <h3 class="blog-title">{props.title}</h3>
-      <p class="blog-summary">{props.summary}</p>
-      <div class="blog-meta">
-        <span class="blog-date">{props.date} </span>
-        <span class="blog-tags"> {props.tags}</span>
-        <span class="blog-likes">❤️ {props.likes}</span>
+    <Link to={`/blog/blogs/${etitle}`}>
+      <div className="blog-card">
+        <Link to={`/blog/blogs/${etitle}`} className="blog-title">
+          {title}
+        </Link>
+        <p className="blog-summary">{summary}</p>
+        <div className="blog-meta">
+          <span className="blog-date">{date}</span>
+          <span className="blog-tags">{tags}</span>
+          <span className="blog-likes">❤️ {likes}</span>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
+
 export default BlogCard;

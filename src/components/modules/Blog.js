@@ -1,31 +1,39 @@
 import React, { useEffect, useState } from "react";
-import "./Blog.module.css";
+import "./Blog.css";
 import Markdown from "react-markdown";
 import gfm from "remark-gfm";
+import { useParams } from "@reach/router";
 
 const Blog = () => {
+  const { etitle } = useParams();
   const [content, setContent] = useState("");
-  const filepath = "/path/to/your/markdown/file.md"; // 请根据实际情况修改路径
 
   useEffect(() => {
-    fetch(filepath)
-      .then((response) => {
+    const fetchContent = async () => {
+      try {
+        const response = await fetch(`/blog/blogs/${etitle}.md`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-        return response.text();
-      })
-      .then((text) => setContent(text))
-      .catch((error) => {
+        const text = await response.text();
+        setContent(text);
+      } catch (error) {
         console.error("获取Markdown文件时出错:", error);
         setContent("加载内容时出现错误，请稍后再试。");
-      });
-  }, [filepath]); // 如果需要根据 filepath 变化重新请求，可以将其加入依赖
+      }
+    };
+
+    if (etitle) {
+      fetchContent();
+    }
+  }, [etitle]);
 
   return (
-    <div className="blog">
-      <Markdown remarkPlugins={[gfm]}>{content}</Markdown>
-    </div>
+    <nav className="blog-navBarMain">
+      <div className="blog">
+        <Markdown remarkPlugins={[gfm]}>{content}</Markdown>
+      </div>
+    </nav>
   );
 };
 

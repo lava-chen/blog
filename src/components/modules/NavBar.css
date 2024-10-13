@@ -37,3 +37,20 @@ a {
   align-items: center;
   padding: 0 40px;
 }
+
+/* 响应式设计：适应小屏幕 */
+@media (max-width: 768px) {
+  .navBar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ulFlex {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .ulFlex li {
+    margin: 5px 0;
+  }
+}
