@@ -8,6 +8,14 @@
     "etitle": "chuangxun_FY3_dataset"
   },
   {
+    "title": "React+Github Page 搭建个人博客指南",
+    "summary": "从零开始搭建个人博客，包括博客主题、评论插件、网站统计等",
+    "date": "2024-10-13",
+    "tags": "#React #Github #博客 #指南",
+    "likes": 0,
+    "etitle": "react_blog_build"
+  },
+  {
     "title": "Markdown Test",
     "summary": "Markdown 样式测试",
     "date": "2024-10-13",
