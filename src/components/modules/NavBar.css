@@ -9,6 +9,7 @@
   font-style: normal;
   font-variation-settings: "BLED" 19, "SCAN" 8, "XELA" -100, "YELA" -89;
   text-align: center;
+  margin: 0;
 }
 .noto-sans-sc-font {
   font-family: "Noto Sans SC", sans-serif;
@@ -17,40 +18,44 @@
   font-style: normal;
 }
 
-li {
-  display: inline; /* 水平排列列表项 */
-  margin-right: 20px; /* 列表项之间添加间距 */
+.navBar {
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  margin: 0 10px;
+}
+
+.navBar li {
+  margin-right: 20px;
 }
 .ulFlex {
   display: flex;
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 0 10px;
 }
+
 a {
   color: #333;
   text-decoration: none;
 }
-.navBar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 40px;
-}
 
-/* 响应式设计：适应小屏幕 */
+/* 响应式设计 */
 @media (max-width: 768px) {
   .navBar {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: column; /* 小屏幕上导航栏项目垂直排列 */
+    padding: 10px 20px;
   }
-
   .ulFlex {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: column; /* 垂直排列 */
   }
-
-  .ulFlex li {
-    margin: 5px 0;
+  .navBar li {
+    margin: 10px 0; /* 导航项上下间距 */
   }
 }

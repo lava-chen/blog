@@ -9,18 +9,15 @@ import Blog from "./components/modules/Blog";
 
 function App() {
   return (
-    <>
+    <div>
       <NavBar />
-      <hr />
-      <div>
-        <Router>
-          <Home path="/blog" />
-          <Blogs path="/blog/blogs" />
-          <CX path="/blog/chuangxun" />
-          <Blog path="/blog/blogs/:etitle" />
-        </Router>
-      </div>
-    </>
+      <Router>
+        <Home path="/blog" />
+        <Blogs path="/blog/blogs" />
+        <CX path="/blog/chuangxun" />
+        <Blog path="/blog/blogs/:etitle" />
+      </Router>
+    </div>
   );
 }
 

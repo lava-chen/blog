@@ -1,5 +1,9 @@
 # 风云 3G 卫星数据集
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)][colab]
+
+> 建议在 colab 查看
+
 ## 1. 数据处理
 
 对数据的处理主要有两个目的：
@@ -99,3 +103,5 @@ for i in range(0, len(ls_filepaths),2):
     df_total = pd.concat([df_total, df_new], ignore_index=True)
     print(df_total.shape)
 ```
+
+[colab]: https://colab.research.google.com/drive/13hBr2Laq-Iir8OVjsL2y6KrQ8aMoaYjZ#scrollTo=YSNqWkBux_MV

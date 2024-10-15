@@ -1,430 +1,110 @@
-.blog-navBarMain {
-  margin: 0px 80px;
-}
-.blog body {
-  font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #111;
-  background-color: #fbfbfb;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-feature-settings: "kern" 1;
-  -moz-font-feature-settings: "kern" 1;
-  -o-font-feature-settings: "kern" 1;
-  font-feature-settings: "kern" 1;
-  font-kerning: normal;
-  padding: 30px;
+.markdown-body {
+  font-family: Arial, sans-serif; /* 设置基础字体 */
+  line-height: 1.6; /* 行高 */
+  padding: 20px; /* 内边距 */
+  background-color: #000000; /* 背景色 */
+  border-radius: 5px; /* 边框圆角 */
+  overflow: auto; /* 防止溢出 */
 }
 
-@media only screen and (max-width: 600px) {
-  .blog body {
-    padding: 5px;
-  }
-  .blog body > #content {
-    padding: 0px 20px 20px 20px !important;
+@media (prefers-color-scheme: light) {
+  .markdown-body {
+    background-color: #ffffff; /* 浅色模式下使用浅色背景 */
   }
 }
-
-.blog body > #content {
-  margin: 0px;
-  max-width: 900px;
-  border: 1px solid #e1e4e8;
-  padding: 10px 40px;
-  padding-bottom: 20px;
-  border-radius: 2px;
-  margin-left: auto;
-  margin-right: auto;
+.article {
+  font-size: medium;
+  padding: 10px; /* 内边距 */
+  background-color: #ffffff; /* 背景色 */
+  border-right: 1px solid #ddd; /* 右边框 */
+  height: calc(100vh - 120px);
+  overflow-y: auto;
 }
 
-.blog summary {
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.blog hr {
-  color: #bbb;
-  background-color: #bbb;
-  height: 1px;
-  flex: 0 1 auto;
-  margin: 1em 0;
-  padding: 0;
-  border: none;
-}
-
-.blog .hljs-operator {
-  color: #868686;
-}
-
-.blog ol {
-  padding: 15px;
-
-  counter-reset: item; /* Set up a counter for the list */
-  list-style: none; /* Remove default list markers */
-  margin: 0;
-  padding-left: 0; /* Remove padding */
-}
-
-.blog ol li {
-  counter-increment: item; /* Increment the counter */
-  margin-bottom: 5px; /* Space between items */
-  padding-left: 20px; /* Space for custom markers */
-  position: relative; /* For marker positioning */
-  line-height: 1.5; /* Line spacing */
-}
-
-.blog ol li::before {
-  content: counter(item) ". "; /* Custom marker */
-  position: absolute;
-  left: 0; /* Align marker to the left */
-  font-weight: bold; /* Make the marker bold */
-}
-
-.blog ol li:last-child {
-  margin-bottom: 0; /* Remove space for the last item */
-}
-/**
- * Links
- */
-
-.blog a {
-  color: #0366d6;
-  text-decoration: none;
-}
-
-.blog a:visited {
-  color: #0366d6;
-}
-
-.blog a:hover {
-  color: #0366d6;
-  text-decoration: underline;
-}
-
-.blog pre {
-  background-color: #f6f8fa;
-  border-radius: 3px;
-  font-size: 85%;
-  line-height: 1.45;
-  overflow: auto;
-  padding: 16px;
-}
-
-/**
-  * Code blocks
-  */
-
-.blog code {
-  background-color: rgba(27, 31, 35, 0.05);
-  border-radius: 3px;
-  font-size: 85%;
-  margin: 0;
-  word-wrap: break-word;
-  padding: 0.2em 0.4em;
-  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
-    monospace;
-}
-
-.blog pre > code {
-  background-color: transparent;
-  border: 0;
-  display: inline;
-  line-height: inherit;
-  margin: 0;
-  overflow: visible;
-  padding: 0;
-  word-wrap: normal;
-  font-size: 100%;
-}
-
-/**
- * Blockquotes
- */
-
-.blog blockquote {
-  margin-left: 30px;
-  margin-top: 0px;
-  margin-bottom: 16px;
-  border-left-width: 3px;
-  padding: 0 1em;
-  color: #828282;
-  border-left: 4px solid #e8e8e8;
-  padding-left: 15px;
-  font-size: 18px;
-  letter-spacing: -1px;
-  font-style: italic;
-}
-
-.blog blockquote * {
-  font-style: normal !important;
-  letter-spacing: 0;
-  color: #6a737d !important;
-}
-
-/**
- * Tables
- */
-
-.blog table {
-  border-spacing: 2px;
-  display: block;
+.markdown-navigation {
   font-size: 14px;
-  overflow: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica",
+    "Arial", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    "WenQuanYi Micro Hei", sans-serif;
   width: 100%;
-  margin-bottom: 16px;
-  border-spacing: 0;
-  border-collapse: collapse;
+  overflow: hidden;
 }
 
-.blog td {
-  padding: 6px 13px;
-  border: 1px solid #dfe2e5;
+.markdown-navigation .title-anchor {
+  display: block;
+  color: #bbb;
+  transition: all 0.2s;
+  margin: 0.8em 0;
+  font-weight: lighter;
+  line-height: 2em;
+  padding-right: 1.8em;
+  cursor: pointer;
 }
 
-.blog th {
-  font-weight: 600;
-  padding: 6px 13px;
-  border: 1px solid #dfe2e5;
+.markdown-navigation .title-anchor:hover {
+  background-color: #f8f8f8;
+  color: #007fff;
+}
+/* .markdown-navigation .title-anchor.active {
+  background-color: #f8f8f8;
+  text-decoration: inherit;
+} */
+
+/* .markdown-navigation .title-anchor.active {
+  color: #007fff;
+} */
+
+.markdown-navigation .title-anchor small {
+  margin: 0 0.8em;
 }
 
-.blog tr {
-  background-color: #fff;
-  border-top: 1px solid #c6cbd1;
+.markdown-navigation .title-level1 {
+  color: #000;
+  font-size: 1.2em;
+  padding-left: 1em;
+  font-weight: normal;
 }
 
-.blog table tr:nth-child(2n) {
-  background-color: #f6f8fa;
+.markdown-navigation .title-level2 {
+  color: #000;
+  font-size: 1em;
+  padding-left: 1.5em;
+  font-weight: normal;
 }
 
-/**
- * Others
- */
-
-.blog img {
-  max-width: 100%;
+.markdown-navigation .title-level3 {
+  color: #222;
+  font-size: 0.9em;
+  padding-left: 3em;
+  font-weight: normal;
 }
 
-.blog p {
-  line-height: 24px;
-  font-weight: 400;
-  font-size: 16px;
-  color: #24292e;
-}
-
-.blog ul {
-  margin-top: 0;
-}
-
-.blog li {
-  color: #24292e;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
-}
-
-.blog li + li {
-  margin-top: 0.25em;
-}
-
-.blog h1,
-.blog h2,
-.blog h3 {
-  border-bottom: 1px solid #eaecef;
-  color: #111;
-  /* Darker */
-}
-
-.blog code > * {
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
-}
-
-@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
-
-@import url(http://fonts.googleapis.com/css?family=Arimo:700,700italic);
-
-@media print {
-  *,
-  *:before,
-  *:after {
-    background: transparent !important;
-    color: #000 !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  .blog a,
-  .blog a:visited {
-    text-decoration: underline;
-  }
-
-  .blog a[href]:after {
-    content: " (" attr(href) ")";
-  }
-
-  .blog abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-
-  .blog a[href^="#"]:after,
-  .blog a[href^="javascript:"]:after {
-    content: "";
-  }
-
-  .blog pre,
-  .blog blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  .blog thead {
-    display: table-header-group;
-  }
-
-  .blog tr,
-  .blog img {
-    page-break-inside: avoid;
-  }
-
-  .blog img {
-    max-width: 100% !important;
-  }
-
-  .blog p,
-  .blog h2,
-  .blog h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  .blog h2,
-  .blog h3 {
-    page-break-after: avoid;
-  }
-}
-
-.blog pre,
-.blog code {
-  font-family: Menlo, Monaco, "Courier New", monospace;
-}
-
-.blog pre {
-  padding: 0.5rem;
-  line-height: 1.25;
-  overflow-x: scroll;
-}
-
-.blog a,
-.blog a:visited {
-  color: #3498db;
-}
-
-.blog a:hover,
-.blog a:focus,
-.blog a:active {
-  color: #2980b9;
-}
-
-.blog .modest-no-decoration {
-  text-decoration: none;
-}
-
-.blog html {
-  font-size: 12px;
-}
-
-@media screen and (min-width: 32rem) and (max-width: 48rem) {
-  .blog html {
-    font-size: 15px;
-  }
-}
-
-@media screen and (min-width: 48rem) {
-  .blog html {
-    font-size: 16px;
-  }
-}
-
-.blog body {
-  line-height: 1.85;
-}
-
-.blog p,
-.blog .modest-p {
-  font-size: 1rem;
-  margin-bottom: 1.3rem;
-}
-
-.blog h1,
-.blog .modest-h1,
-.blog h2,
-.blog .modest-h2,
-.blog h3,
-.blog .modest-h3,
-.blog h4,
-.blog .modest-h4 {
-  margin: 1.414rem 0 0.5rem;
-  font-weight: inherit;
-  line-height: 1.42;
-}
-
-.blog h1,
-.blog .modest-h1 {
-  margin-top: 0;
-  font-size: 3.998rem;
-}
-
-.blog h2,
-.blog .modest-h2 {
-  font-size: 2.827rem;
-}
-
-.blog h3,
-.blog .modest-h3 {
-  font-size: 1.999rem;
-}
-
-.blog h4,
-.blog .modest-h4 {
-  font-size: 1.414rem;
-}
-
-.blog h5,
-.blog .modest-h5 {
-  font-size: 1.121rem;
-}
-
-.blog h6,
-.blog .modest-h6 {
-  font-size: 0.88rem;
-}
-
-.blog small,
-.blog .modest-small {
-  font-size: 0.707em;
-}
-
-/* https://github.com/mrmrs/fluidity  */
-
-.blog img,
-.blog canvas,
-.blog iframe,
-.blog video,
-.blog svg,
-.blog select,
-.blog textarea {
-  max-width: 100%;
-}
-
-/* 由于网络原因，无法解析提供的链接内容。请检查链接的合法性，并在必要时重试。 */
-
-.blog html {
-  font-size: 18px;
-  max-width: 100%;
-}
-
-.blog body {
+.markdown-navigation .title-level4 {
   color: #444;
-  font-family: "Open Sans Condensed", sans-serif;
-  font-weight: 300;
-  margin: 0 auto;
-  max-width: 48rem;
-  line-height: 1.45;
-  padding: 0.25 rem;
+  font-size: 0.8em;
+  padding-left: 5em;
+}
+
+.markdown-navigation .title-level5 {
+  color: #444;
+  font-size: 0.8em;
+  padding-left: 6.5em;
+}
+
+.markdown-navigation .title-level6 {
+  color: #444;
+  font-size: 0.8em;
+  padding-left: 8em;
+}
+
+-navigation .title-level5 {
+  color: #444;
+  font-size: 0.8em;
+  padding-left: 6.5em;
+}
+
+.markdown-navigation .title-level6 {
+  color: #444;
+  font-size: 0.8em;
+  padding-left: 8em;
 }

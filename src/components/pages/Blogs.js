@@ -34,7 +34,7 @@ const Blogs = () => {
             date={blogObj.date || "Unknown date"}
             tags={blogObj.tags || []}
             likes={blogObj.likes || 0}
-            etitle={blogObj.etitle || "No external link available"}
+            etitle={blogObj.etitle}
           />
         );
       } else {
@@ -47,9 +47,9 @@ const Blogs = () => {
   }
 
   return (
-    <>
+    <body>
       <nav className="navBarMain">{blogList}</nav>
-    </>
+    </body>
   );
 };
 export default Blogs;
