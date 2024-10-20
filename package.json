@@ -9,6 +9,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "express": "^4.21.1",
     "github-markdown-css": "^5.7.0",
     "markdown-navbar": "^1.4.3",
     "react": "^18.3.1",
@@ -49,6 +50,9 @@
   },
   "devDependencies": {
     "gh-pages": "^6.1.1",
-    "raw-loader": "^4.0.2"
+    "raw-loader": "^4.0.2",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
   }
 }

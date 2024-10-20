@@ -1,6 +1,6 @@
 import React from "react";
 
-const Chuangxun = () => {
+const Projects = () => {
   return (
     <body>
       <a
@@ -13,4 +13,4 @@ const Chuangxun = () => {
   );
 };
 
-export default Chuangxun;
+export default Projects;

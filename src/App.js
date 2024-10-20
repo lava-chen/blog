@@ -3,21 +3,21 @@ import { Router } from "@reach/router";
 import React from "react";
 import NavBar from "./components/modules/NavBar";
 import Home from "./components/pages/Home";
-import CX from "./components/pages/chuangxun";
+import Projects from "./components/pages/Projects";
 import Blogs from "./components/pages/Blogs";
-import Blog from "./components/modules/Blog";
+import BlogPage from "./components/pages/BlogPage";
 
 function App() {
   return (
-    <div>
+    <>
       <NavBar />
       <Router>
         <Home path="/blog" />
         <Blogs path="/blog/blogs" />
-        <CX path="/blog/chuangxun" />
-        <Blog path="/blog/blogs/:etitle" />
+        <Projects path="/blog/Projects" />
+        <BlogPage path="/blog/blogs/:etitle" />
       </Router>
-    </div>
+    </>
   );
 }
 

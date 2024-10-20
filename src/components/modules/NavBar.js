@@ -7,7 +7,7 @@ const NavBar = () => {
   const navItems = [
     { path: "/blog", label: "首页" },
     { path: "/blog/blogs", label: "博客" },
-    { path: "/blog/chuangxun", label: "创训" },
+    { path: "/blog/Projects", label: "项目" },
   ];
 
   return (

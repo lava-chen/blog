@@ -2,3 +2,14 @@
   margin: 0px 0px;
   font-size: 60px;
 }
+.navBarHome {
+  text-align: center;
+}
+.home-body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex; /* 新增 */
+  justify-content: center; /* 新增 */
+  align-items: center; /* 新增 */
+}
