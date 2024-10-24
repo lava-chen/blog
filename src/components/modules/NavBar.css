@@ -20,7 +20,7 @@
 
 .navBar {
   background-color: white;
-  width: 100%;
+  width: 98%;
   position: fixed;
   top: 0;
   z-index: 1000;
@@ -58,4 +58,27 @@ a {
   .navBar li {
     margin: 10px 0; /* 导航项上下间距 */
   }
+}
+
+.NavBar-linkContainer {
+  margin-left: var(--l);
+}
+
+.NavBar-link,
+.NavBar-link:visited {
+  color: var(--white);
+  opacity: 0.6;
+  text-decoration: none;
+}
+
+.NavBar-link:hover {
+  opacity: 0.8;
+}
+
+.NavBar-link.NavBar-login {
+  opacity: 1;
+}
+
+.NavBar-link + .NavBar-link {
+  margin-left: var(--m);
 }

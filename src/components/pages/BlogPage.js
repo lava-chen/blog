@@ -17,12 +17,17 @@ const BlogPage = () => {
       if (!etitle) return; // 防止无效标题请求
 
       try {
-        const response = await fetch(`/blog/blogs/${etitle}.md`);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+        const response = await fetch("http://localhost:3001/api/blogs");
+        const data = await response.json(); // 解析为JSON格式
+
+        // 假设data是一个数组，并且每个对象都有etitle和blogcontent属性
+        const blogPost = data.find((post) => post.etitle === etitle);
+
+        if (blogPost) {
+          setContent(blogPost.blogcontent); // 设置对应的blogcontent
+        } else {
+          setContent("未找到对应的内容。");
         }
-        const text = await response.text();
-        setContent(text);
       } catch (error) {
         console.error("获取Markdown文件时出错:", error);
         setContent("加载内容时出现错误，请稍后再试。");
@@ -30,7 +35,7 @@ const BlogPage = () => {
     };
 
     fetchContent();
-  }, [etitle]);
+  }, [etitle]); // 添加依赖项，etitle改变时重新执行
 
   const renderers = {
     code: ({ inline, className, children }) => {

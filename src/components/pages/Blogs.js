@@ -1,23 +1,16 @@
 import BlogCard from "../modules/BlogCard.js";
+import "./Blogs.css";
 import React, { useEffect, useState } from "react";
-
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
-    fetch("/blog/blogs.json")
-      .then((response) => {
-        console.log(response);
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
+    fetch("http://localhost:3001/api/blogs")
+      .then((res) => {
+        console.log(res);
+        return res.json();
       })
       .then((data) => {
-        console.log(data);
         setBlogs(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching the blogs:", error);
       });
   }, []);
   console.log(blogs);
@@ -47,9 +40,9 @@ const Blogs = () => {
   }
 
   return (
-    <body>
+    <div className="blogspage-container">
       <nav className="navBarMain">{blogList}</nav>
-    </body>
+    </div>
   );
 };
 export default Blogs;

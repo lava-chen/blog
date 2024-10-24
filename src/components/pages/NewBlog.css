@@ -1,0 +1,39 @@
+.NewBlog {
+  max-width: 600px; /* 设置最大宽度 */
+  margin: 40px auto; /* 居中对齐 */
+  padding: 40px; /* 内边距 */
+  border: 1px solid #ccc; /* 边框 */
+  border-radius: 8px; /* 圆角 */
+  background-color: #f9f9f9; /* 背景颜色 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 投影效果 */
+}
+
+.NewBlog input[type="text"],
+.NewBlog input[type="date"],
+.NewBlog input[type="file"] {
+  width: 98%; /* 宽度100% */
+  padding: 10px; /* 内边距 */
+  margin: 10px 0; /* 上下边距 */
+  border: 1px solid #ccc; /* 边框样式 */
+  border-radius: 4px; /* 圆角 */
+  font-size: 16px; /* 字体大小 */
+}
+
+.NewBlog button {
+  background-color: #007bff; /* 按钮背景颜色 */
+  color: white; /* 字体颜色 */
+  padding: 10px 15px; /* 内边距 */
+  border: none; /* 无边框 */
+  border-radius: 4px; /* 圆角 */
+  cursor: pointer; /* 鼠标悬停样式 */
+  font-size: 16px; /* 字体大小 */
+  transition: background-color 0.3s; /* 背景颜色过渡效果 */
+}
+
+.NewBlog button:hover {
+  background-color: #0056b3; /* 鼠标悬停时的背景颜色 */
+}
+
+.NewBlog input[type="file"] {
+  padding: 0; /* 文件输入框没有内边距 */
+}
